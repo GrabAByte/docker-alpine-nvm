@@ -23,15 +23,16 @@ jobs:
       WORKFLOW_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     needs: get-version
-  docker-scan:
-    uses: GrabAByte/github-devops-workflows/.github/workflows/dockerBuildScan.yml@0.6.4
-    with:
-      dockerfilePath: 'docker/Dockerfile'
-    secrets:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-    needs: get-version
+      ## Snyk requires license now
+      #docker-scan:
+      #uses: GrabAByte/github-devops-workflows/.github/workflows/dockerBuildScan.yml@0.6.4
+      #with:
+      #dockerfilePath: 'docker/Dockerfile'
+      #secrets:
+      #DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      #DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+      #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      #needs: get-version
   docker-build-publish:
     uses: GrabAByte/github-devops-workflows/.github/workflows/dockerBuildPublish.yml@0.6.4
     with:
@@ -39,7 +40,7 @@ jobs:
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-    needs: [docker-lint, sonar-scan, docker-scan]
+    needs: [docker-lint, sonar-scan]
   update-version:
     uses: GrabAByte/github-devops-workflows/.github/workflows/updateVersion.yml@0.6.4
     with:
