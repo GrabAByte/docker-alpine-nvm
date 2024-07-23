@@ -3,8 +3,7 @@ FROM grababyte/alpine-base:0.11.0
 ARG NODE_MAJOR_VERSION '22'
 
 ENV NVM_VERSION 'v0.39.1'
-ENV PATH "${PATH}:/.yarn/bin"
-ENV USER alpine
+ENV USER 'alpine'
 
 USER root
 
@@ -19,7 +18,7 @@ USER "${USER}"
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/"${NVM_VERSION}"/install.sh | bash
+RUN curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/${NVM_VERSION}/install.sh" | bash
 
 ENV NVM_DIR "/home/${USER}/.nvm"
 
