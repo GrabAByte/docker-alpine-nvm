@@ -1,4 +1,4 @@
-FROM grababyte/alpine-base:0.11.0
+FROM grababyte/alpine-base:0.11.2
 
 ARG NODE_MAJOR_VERSION '22'
 
