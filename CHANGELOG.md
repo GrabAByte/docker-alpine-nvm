@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.3] - (16-09-2024)
+chore: (0c31ce1) bump base image version of alpine to 0.11.2 (#5)
+
 ## [0.1.2] - (12-09-2024)
 fix: (0abbae6) Add MIT License (#3)
 
