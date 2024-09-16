@@ -10,9 +10,9 @@ USER root
 RUN \
   apk update && \
   apk add --no-cache \
-    bash==5.2.21-r0 \
-    nodejs==20.12.1-r0 \
-    yarn==1.22.19-r0
+    bash==5.2.26-r0 \
+    nodejs==20.15.1-r0 \
+    yarn==1.22.22-r0
 
 USER "${USER}"
 
