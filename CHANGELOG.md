@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.2.0] - (25-04-2025)
+feat: (21324d1) update base image to 0.12.0 and dependencies (#6)
+
 ## [0.1.3] - (16-09-2024)
 chore: (0c31ce1) bump base image version of alpine to 0.11.2 (#5)
 
